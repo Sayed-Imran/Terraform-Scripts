@@ -1,8 +1,20 @@
+resource "google_compute_firewall" "allow-http-ssh" {
+    name    = "allow-http-ssh"
+    network = "default"
+    allow {
+        protocol = "tcp"
+        ports    = ["80", "22"]
+    }
+    source_ranges = ["0.0.0.0/0"]
+    target_tags   = ["allow-http-ssh"]
+}
+
+
 resource "google_compute_instance" "test-machine" {
     name         = "test-machine"
     machine_type = var.machine_type
     zone         = var.zone
-    tags         = ["allow-all"]
+    tags         = ["allow-http-ssh"]
     boot_disk {
         initialize_params {
         image = var.image
