@@ -1,0 +1,8 @@
+*.bat
+terraform.tfstate
+terraform.tfstate.backup
+values.tfvars
+.terraform/
+gcp-key*
+.terraform.lock.hcl
+credentials/
