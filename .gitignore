@@ -6,3 +6,4 @@ values.tfvars
 gcp-key*
 .terraform.lock.hcl
 credentials/
+.terraform.tfstate.lock.info
